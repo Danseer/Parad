@@ -14,7 +14,7 @@ public class tab2Play extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab2play, container, false);
+        View rootView = inflater.inflate(R.layout.gallery_item_play_demo, container, false);
         return rootView;
     }
 }

@@ -5,4 +5,8 @@
     <string name="tab1Name">Start</string>
     <string name="tab2Name">Play</string>
     <string name="tab3Name">Top</string>
+    <string name="title_activity_add">addActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
