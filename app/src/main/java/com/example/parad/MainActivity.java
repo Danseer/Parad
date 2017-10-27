@@ -1,5 +1,6 @@
 package com.example.parad;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
@@ -12,22 +13,13 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -37,14 +29,17 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_filter:
-                   // mTextMessage.setText(R.string.title_home);
 
                     return true;
+
                 case R.id.navigation_plus:
-                    //  mTextMessage.setText(R.string.title_dashboard);
                     return true;
+
                 case R.id.navigation_person:
-                    // mTextMessage.setText(R.string.title_notifications);
+
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+
                     return true;
             }
             return false;
@@ -52,16 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-      //  setSupportActionBar(toolbar);
+
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -74,34 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-*/
-
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -112,15 +78,16 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    tab1Start tab1=new tab1Start();
+                    tab1Start tab1 = new tab1Start();
                     return tab1;
                 case 1:
-                    tab2Play tab2=new tab2Play();
+                    tab2Play tab2 = new tab2Play();
                     return tab2;
                 case 2:
-                    tab3Top tab3=new tab3Top();
+                    tab3Top tab3 = new tab3Top();
                     return tab3;
-                default: return null;
+                default:
+                    return null;
             }
 
         }
