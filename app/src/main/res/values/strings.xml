@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Parad</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab1Name">Start</string>
+    <string name="tab2Name">Play</string>
+    <string name="tab3Name">Top</string>
+</resources>
