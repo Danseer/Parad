@@ -6,9 +6,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import java.io.FileNotFoundException;
@@ -23,6 +27,37 @@ public class AddActivity extends AppCompatActivity {
     private static final int REQUEST = 3;
     private ImageView iv;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_filter:
+
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    tab1Start catFragment = new tab1Start();
+                    ft.replace(R.id.container, catFragment);
+                    ft.commit();
+                    return true;
+
+                case R.id.navigation_plus:
+
+                   // intent = new Intent(MainActivity.this,AddActivity.class);
+                   // startActivity(intent);
+                    return true;
+
+                case R.id.navigation_person:
+
+                    // intent = new Intent(MainActivity.this, LoginActivity.class);
+                    // startActivity(intent);
+
+                    return true;
+            }
+            return false;
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

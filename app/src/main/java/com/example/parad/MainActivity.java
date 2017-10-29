@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.app.Fragment;
@@ -30,6 +31,10 @@ private  Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_filter:
 
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    tab1Start catFragment = new tab1Start();
+                    ft.replace(R.id.container, catFragment);
+                    ft.commit();
                     return true;
 
                 case R.id.navigation_plus:
@@ -40,8 +45,8 @@ private  Intent intent;
 
                 case R.id.navigation_person:
 
-                    intent = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(intent);
+                   // intent = new Intent(MainActivity.this, LoginActivity.class);
+                   // startActivity(intent);
 
                     return true;
             }
