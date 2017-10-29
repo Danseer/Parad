@@ -17,7 +17,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-
+private  Intent intent;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
@@ -33,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_plus:
+
+                    intent = new Intent(MainActivity.this,AddActivity.class);
+                    startActivity(intent);
                     return true;
 
                 case R.id.navigation_person:
 
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
 
                     return true;
