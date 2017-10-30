@@ -28,26 +28,26 @@ public class AddPhotoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_photo);
-        iv=(ImageView)findViewById(R.id.iv2);
-iv.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
+        iv = (ImageView) findViewById(R.id.iv2);
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
-        builder.show();
-    }
-});
+                builder.show();
+            }
+        });
 
         selectImage();
     }
 
-    private void selectImage(){
+    private void selectImage() {
 
 
-        final CharSequence[] options = {"Take Photo", "Choose From Gallery","Cancel"};
+        final CharSequence[] options = {"Take Photo", "Choose From Gallery", "Cancel"};
         builder = new android.support.v7.app.AlertDialog.Builder(AddPhotoActivity.this);
         builder.setTitle("Select Option");
-        
+
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
@@ -57,15 +57,11 @@ iv.setOnClickListener(new View.OnClickListener() {
                     Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
                     photoPickerIntent.setType("image/*");
                     startActivityForResult(photoPickerIntent, REQUEST_GALLERY);
-                }
-
-                else if (options[item].equals("Take Photo")) {
+                } else if (options[item].equals("Take Photo")) {
                     dialog.dismiss();
                     Intent photoPickerIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(photoPickerIntent, REQUEST_CAMERA);
-                }
-
-                else if (options[item].equals("Cancel")) {
+                } else if (options[item].equals("Cancel")) {
                     dialog.dismiss();
                 }
             }
@@ -74,21 +70,23 @@ iv.setOnClickListener(new View.OnClickListener() {
     }
 
 
-
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        switch(requestCode) {
+        switch (requestCode) {
             case REQUEST_GALLERY:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     Uri selectedImage = imageReturnedIntent.getData();
                     iv.setImageURI(selectedImage);
-                } break;
+                }
+                break;
 
             case REQUEST_CAMERA:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     Bitmap yourSelectedImage = (Bitmap) imageReturnedIntent.getExtras().get("data");
 
-                    iv.setImageBitmap(yourSelectedImage);}
-                break; }
+                    iv.setImageBitmap(yourSelectedImage);
+                }
+                break;
+        }
     }
 }

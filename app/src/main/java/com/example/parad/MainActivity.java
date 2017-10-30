@@ -31,17 +31,17 @@ private  Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_filter:
 
-
+                    return true;
                 case R.id.navigation_plus:
 
                    // intent = new Intent(MainActivity.this,AddPhotoActivity.class);
                    // startActivity(intent);
-                   // return true;
+                    return true;
 
                 case R.id.navigation_person:
 
-                   // intent = new Intent(MainActivity.this, LoginActivity.class);
-                   // startActivity(intent);
+                    intent = new Intent(MainActivity.this, UserProfileActivity.class);
+                    startActivity(intent);
 
                     return true;
             }
