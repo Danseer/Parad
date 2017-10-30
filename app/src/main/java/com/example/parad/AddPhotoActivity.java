@@ -29,6 +29,7 @@ public class AddPhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_photo);
         iv = (ImageView) findViewById(R.id.iv2);
+
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
