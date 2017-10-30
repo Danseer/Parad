@@ -31,17 +31,12 @@ private  Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_filter:
 
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    tab1Start catFragment = new tab1Start();
-                    ft.replace(R.id.container, catFragment);
-                    ft.commit();
-                    return true;
 
                 case R.id.navigation_plus:
 
-                    intent = new Intent(MainActivity.this,AddActivity.class);
-                    startActivity(intent);
-                    return true;
+                   // intent = new Intent(MainActivity.this,AddPhotoActivity.class);
+                   // startActivity(intent);
+                   // return true;
 
                 case R.id.navigation_person:
 
