@@ -112,7 +112,7 @@
                 android:layout_marginTop="40dp"
                 android:text="хэш тэги"
                 app:layout_constraintTop_toBottomOf="@+id/rv_play_cardview"
-                app:layout_constraintLeft_toRightOf="@+id/imageView"
+                app:layout_constraintLeft_toRightOf="@+id/ivHashTag"
                 android:layout_marginLeft="8dp" />
 
             <ImageView
@@ -158,7 +158,7 @@
                 app:srcCompat="@android:drawable/btn_star_big_on" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivHashTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/hashtag"
