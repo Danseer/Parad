@@ -8,21 +8,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.parad.MainActivity$PlaceholderFragment">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="tab3text"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/section_label"
-        android:layout_marginTop="117dp"
-        android:layout_toEndOf="@+id/section_label"
-        android:layout_toRightOf="@+id/section_label"
-        android:onClick="buttlisten"
-        android:text="Button" />
-
 </RelativeLayout>

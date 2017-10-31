@@ -27,7 +27,7 @@ public class tab1Start extends Fragment{
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //view.setVisibility(View.INVISIBLE);
+
                 intent = new Intent(getActivity(),AddPhotoActivity.class);
                 startActivity(intent);
             }
